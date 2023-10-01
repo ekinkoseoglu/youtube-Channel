@@ -1,0 +1,30 @@
+.dark-theme {
+  background-color: #000;
+  color: #fff;
+}
+
+.youtube-logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 50px;
+  height: auto;
+}
+
+.channel-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.channel-logo {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin-right: 20px;
+}
+
+.channel-name {
+  font-size: 24px;
+}

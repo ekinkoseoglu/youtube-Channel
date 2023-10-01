@@ -1,0 +1,22 @@
+<div class="container dark-theme">
+  <img src="assets/youtube-logo.png" alt="YouTube Logo" class="youtube-logo" />
+
+  <div class="container">
+    <button class="btn btn-primary" (click)="refreshVideos()">Yenile</button>
+  </div>
+
+  <div class="channel-info p-2 d-flex justify-content-start">
+    <img
+      src="https://img.freepik.com/premium-vector/mascot-gaming-logo-template-esports-streamer_730620-5110.jpg"
+      alt="Channel Logo"
+      class="channel-logo"
+    />
+    <span class="channel-name">Ekin Köseoğlu</span>
+  </div>
+
+  <div class="row" cdkDropList (cdkDropListDropped)="onDrop($event)">
+    <div class="col-md-4 mb-4" *ngFor="let video of videos" cdkDrag>
+      <app-video-card [video]="video"></app-video-card>
+    </div>
+  </div>
+</div>
