@@ -1,0 +1,39 @@
+<div class="d-flex">
+  <input
+    type="text"
+    class="form-control w-25"
+    placeholder="Ara..."
+    [(ngModel)]="username"
+  />
+
+  <button class="btn btn-primary" (click)="listVideosByChannelUsername()">
+    Ara
+  </button>
+
+  <button class="btn btn-secondary" (click)="refreshVideos()">Yenile</button>
+</div>
+<div>
+  <h2>Videolar</h2>
+  <div
+    cdkDropList
+    (cdkDropListDropped)="drop($event)"
+    *ngIf="videos"
+    class="m-4"
+  >
+    <div
+      *ngFor="let video of videos; let i = index"
+      class="video-ca"
+      cdkDrag
+      [cdkDragData]="i"
+    >
+      <img
+        [src]="video.snippet.thumbnails.default.url"
+        class="me-4 youtube-logo"
+      />
+      <div>
+        <h3>{{ video.snippet.title }}</h3>
+        <p>{{ video.snippet.description }}</p>
+      </div>
+    </div>
+  </div>
+</div>

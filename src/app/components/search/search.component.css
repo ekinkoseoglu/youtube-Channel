@@ -1,0 +1,21 @@
+.video-ca {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  margin: 30px 30px 30px 0;
+  padding: 30px 30px 30px 0;
+  border-radius: 5px;
+}
+
+.youtube-logo {
+  width: 350px;
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 5px;
+
+  cursor: pointer;
+}
