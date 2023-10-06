@@ -41,8 +41,8 @@ export class SearchComponent {
     this.videoService.searchQuery(this.username).subscribe((res: any) => {
       console.log(res);
       this.videos = res.items;
+      this.store.dispatch(new UpdateVideos(this.videos));
     });
-    this.store.dispatch(new UpdateVideos(this.videos));
   }
 
   drop(event: CdkDragDrop<string[]>) {
@@ -57,12 +57,10 @@ export class SearchComponent {
       );
     }
 
-    // Yeni sırayı state'e kaydet
     this.store.dispatch(new UpdateVideos(this.videos));
   }
 
   refreshVideos() {
-    // Kullanıcı adına göre videoları yeniden çekin
     this.listVideosByChannelUsername();
   }
 }

@@ -10,10 +10,19 @@
     Ara
   </button>
 
-  <button class="btn btn-secondary" (click)="refreshVideos()">Yenile</button>
+  <button
+    class="btn btn-secondary"
+    [disabled]="!videos"
+    (click)="refreshVideos()"
+  >
+    Yenile
+  </button>
 </div>
 <div>
-  <h2>Videolar</h2>
+  <h2>Videos</h2>
+  <div *ngIf="!videos" class="mt-5">
+    <p>Videos not found</p>
+  </div>
   <div
     cdkDropList
     (cdkDropListDropped)="drop($event)"
@@ -22,7 +31,7 @@
   >
     <div
       *ngFor="let video of videos; let i = index"
-      class="video-ca"
+      class="d-flex justify-content-start align-items-start m-3 p-3 rounded"
       cdkDrag
       [cdkDragData]="i"
     >

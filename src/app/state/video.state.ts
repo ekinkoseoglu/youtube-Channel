@@ -1,33 +1,26 @@
-// video.state.ts
-
 import { State, Action, StateContext, Selector } from '@ngxs/store';
 
-// State için model tanımı
 export interface VideoStateModel {
-  videos: any[]; // Videoları burada saklayın
+  videos: any[];
 }
 
-// Videoları güncellemek için bir Action sınıfı tanımlama
 export class UpdateVideos {
-  static readonly type = '[Videos] Update'; // Action tipi
-  constructor(public payload: any[]) {} // Videoları güncellemek için payload
+  static readonly type = '[Videos] Update';
+  constructor(public payload: any[]) {}
 }
 
-// Video State'ini tanımlama
 @State<VideoStateModel>({
-  name: 'videos', // State'in adı
+  name: 'videos',
   defaults: {
     videos: [],
   },
 })
 export class VideoState {
-  // State içindeki videoları seçmek için bir Selector tanımlama
   @Selector()
   static getVideos(state: VideoStateModel) {
     return state.videos;
   }
 
-  // Videoları güncellemek için bir Action tanımlama
   @Action(UpdateVideos)
   updateVideos(ctx: StateContext<VideoStateModel>, { payload }: UpdateVideos) {
     const state = ctx.getState();
