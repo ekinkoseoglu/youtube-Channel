@@ -5,7 +5,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
   providedIn: 'root',
 })
 export class VideoService {
-  private apiKey = 'AIzaSyD35GTiD64lwCFs0ejtO28fZO0s9okYngc'; // Your YouTube API Key here
+  private apiKey = ''; // Your YouTube API Key here
   private apiUrl = 'https://www.googleapis.com/youtube/v3';
 
   constructor(private http: HttpClient) {}
